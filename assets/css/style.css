@@ -1,0 +1,207 @@
+:root {
+    --primary-color: #28a745;
+    --primary-dark: #218838;
+    --primary-light: #5cb85c;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --accent-color: #ffc107;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+.navbar {
+            min-height: 70px;
+}
+
+.navbar-brand img {
+            width: 45px !important;
+            height: 45px !important;
+            object-fit: contain;
+            margin-right: -8px;
+}
+
+.navbar-brand .navbar-brand-text{
+    margin-left: 0.5rem;  
+    font-weight: 700;    
+    font-size: 1.25rem;   
+    color: white;       
+}
+
+/* Animated Gradient Background */
+.hero-section {
+    background: linear-gradient(135deg, rgba(40,167,69,0.1) 0%, rgba(255,255,255,1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(40,167,69,0.05) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Typography */
+.display-4 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 25px;
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.feature-card {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover::after {
+    transform: scaleX(1);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Buttons */
+.btn {
+    font-weight: 500;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.btn-success {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-success:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40,167,69,0.3);
+}
+
+.btn-outline-success {
+    border-width: 2px;
+}
+
+.btn-outline-success:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Stats Section */
+.stats-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.stats-item:hover {
+    transform: translateY(-5px);
+}
+
+.stats-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Testimonials */
+.testimonial-card {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .lead {
+        font-size: 1.25rem;
+    }
+    
+    .hero-img {
+        margin-top: 2rem;
+    }
+}
